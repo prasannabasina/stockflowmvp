@@ -1,41 +1,53 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>dasboard page</title>
+<head>
+    <title>StockFlow Dashboard</title>
     <link rel="stylesheet" href="/static/style.css">
-  </head>
-  <body>
+     <script src="/static/script.js"></script>
+</head>
+<body>
+
     <h1>StockFlow</h1>
-    <div>
-      <nav>
-      <a href="dashboard.html">Dashboard></a>
-      <a href="products.html">Products></a>
-      <a href="login.html">logout </a>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/products">Products</a>
+        <a href="/logout">Logout</a>
     </nav>
-    </div>
+
     <h2>Dashboard</h2>
-    <p>welcome message</p>
+
+    <p>Welcome to StockFlow</p>
+
     <div>
-    <h2>Total Products</h2>
-    <p>value=0</p>
+        <h2>Total Products</h2>
+        <p>{{ total_products }}</p>
     </div>
+
     <div>
-      <h2>Total Stock Quantity</h2>
-      <p>value=0</p>
+        <h2>Total Stock Quantity</h2>
+        <p>{{ total_quantity }}</p>
     </div>
+
+    <h2>Low Stock Products</h2>
+
     <table>
-      <tr>
-        <th>product</th>
-        <th>SKU</th>
-         <th>Quantity</th>
-        <th>threshold</th>   
-      </tr>
-      <tr>
-      <td>sample product</td>
-      <td>SKU001</td>
-      <td>2</td>
-      <td>5</td>
-      </tr>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Threshold</th>
+        </tr>
+
+        {% for product in low_stock %}
+        <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] if product[2] is not none else 5 }}</td>
+        </tr>
+        {% endfor %}
+
     </table>
-  </body>
+
+</body>
 </html>
