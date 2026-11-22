@@ -1,0 +1,55 @@
+
+body {
+    font-family: Arial;
+    background-color: lightgray;
+}
+
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: darkblue;
+}
+
+nav {
+    background-color: navy;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+table {
+    background-color: white;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+}
